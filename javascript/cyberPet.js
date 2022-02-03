@@ -39,19 +39,19 @@ class cyberPet{
             return this._petPlay;
         };
             petPlay(){
-                play++;
-                thirst -= 5;
-                hunger -= 5;
+                this._petPlay++;
+                this._petThirst -= 5;
+                this._petHunger -= 5;
             };
             petHunger(){
-                hunger++;
-                thirst -= 5;
-                play -= 2;
+                this._petHunger++;
+                this._petThirst -= 5;
+                this._petPlay -= 2;
             };
             petThirst(){
-                thirst++;
-                hunger -= 2;
-                play -= 1;
+                this._petThirst++;
+                this._petHunger -= 2;
+                this._petPlay -= 1;
             };
     }
 
