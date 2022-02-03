@@ -1,0 +1,80 @@
+/* cyberpet style sheet */
+/* global */
+* {
+    box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+h1, h5{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(31, 31, 31);
+    overflow: hidden;
+}
+div{
+    border: rgb(255, 0, 0) solid 1px;
+}
+
+/* main container */
+
+#main-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* content */
+
+#div-tital{
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+}
+
+#div-center{
+    display: flex;
+    height: 55vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(190, 190, 190);
+}
+    #div-pet{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+      
+        width: 70vw;
+        height: 50vh;
+    }
+        #div-petimg{
+            display: flex;
+            height: 100%;
+            width: 25vw;
+        }
+        #div-petcontent{
+            display: flex;
+            height: 100%;
+            width: 45vw;
+            border: black solid 2px;
+            
+        }
+
+
+#div-footer{
+    display: flex;
+    height: 24vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+}
