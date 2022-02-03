@@ -1,3 +1,15 @@
+const nameOfPet = document.getElementById(`petName`);
+const typeOfPet = document.getElementById(`petType`);
+const input = document.querySelector(`input`);
+
+document.addEventListener(`click`, (nameOfPet) =>{
+
+
+})
+
+
+
+// ########################################################################################################
 class cyberPet{
     constructor(petName){
         this._petName = petName;
