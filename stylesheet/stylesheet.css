@@ -12,6 +12,12 @@ h1, h5{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h2{
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 body{
     background-color: rgb(31, 31, 31);
     overflow: hidden;
@@ -97,6 +103,8 @@ body{
                 width: 300px;
                 height: 50px;
                 box-shadow: grey 1px 1px 1px 1px;
+                text-align: center;
+           
             }
             input{
                 font-size: large;
@@ -105,6 +113,7 @@ body{
                 width: 300px;
                 height: 50px;
                 box-shadow: grey 1px 1px 1px 1px;
+                text-align: center;
             }
             /* buttons */
 
@@ -124,6 +133,18 @@ body{
                     box-shadow: grey 1px 1px 1px 1px;
                 }
 
+            /* out put div */
+            #levelOutput{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding-top: 20px;
+                height: 8vh;
+
+            }
+            .levelDiv{
+                text-align: center;
+            }
 
 #div-footer{
     display: flex;
