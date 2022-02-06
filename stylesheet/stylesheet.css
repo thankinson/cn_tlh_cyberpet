@@ -22,12 +22,15 @@ body{
     background-color: rgb(31, 31, 31);
     overflow: hidden;
 }
-/* div{
+div{
     border: rgb(255, 0, 0) solid 1px;
-} */
+}
 .space{
     height: 2vh;
     
+}
+img{
+    object-fit: scale-down;
 }
 /* main container */
 
@@ -70,8 +73,9 @@ body{
     }
         #div-petimg{
             display: flex;
+            justify-content: space-around;
             height: 100%;
-            width: 25vw;
+            width: 30vw;
         }
         #div-petcontent{
             display: flex;
@@ -79,7 +83,7 @@ body{
             flex-direction: column;
             justify-content: center;
             height: 100%;
-            width: 45vw;
+            width: 40vw;
             
             
         }

@@ -2,24 +2,31 @@ let petPlay = document.getElementById(`petPlay`);
 let petFeed = document.getElementById(`petFeed`);
 let petDrink = document.getElementById(`petDrink`);
 let petCreate = document.getElementById(`createPet`);
-
+let petImg = document.getElementById(`thePetImg`);
 
 let nameOfPet = document.getElementById(`petName`).value;
 let typeOfPet = document.getElementById(`petType`).value;
 // creates pet
 petCreate.addEventListener(`click`, () =>{
-  
+   
     console.log(nameOfPet, typeOfPet)
     if (typeOfPet == "cat"){
         nameOfPet = new Cat(nameOfPet);
+        petImg.src = "/images/crazy_cat.gif";
+        petCreate.style.visibility = 'hidden';
         console.log(nameOfPet);
     }   else if (typeOfPet == "dog") {
         nameOfPet = new Dog(nameOfPet);
         console.log(nameOfPet);
+        petImg.src = "/images/strangedog.gif";
+        petCreate.style.visibility = 'hidden';
     } else {
         nameOfPet = new Fish(nameOfPet);
         console.log(nameOfPet);
+        petImg.src = "/images/fish.gif";
+        petCreate.style.visibility = 'hidden';
     };
+    
 });
 
 
@@ -31,7 +38,7 @@ petPlay.addEventListener(`click`, () =>{
     console.log(nameOfPet.getHunger);
     if (nameOfPet.getHunger < 1 || nameOfPet.getThirst < 1){
             alert(`${nameOfPet.getName} your pet has died`);
-            window.location.reload();
+            location.reload();
     } else if (nameOfPet.getPlay >= 60){
         console.log(`${nameOfPet.getName} is tired`);
         alert(`${nameOfPet.getName} is extreamly tired and wants to rest`)
@@ -50,7 +57,8 @@ petFeed.addEventListener(`click`, () =>{
     console.log(nameOfPet.getHunger);
     if (nameOfPet.getPlay < 1 || nameOfPet.getThirst < 1){
             alert(`${nameOfPet.getName} your pet has died`);
-            window.location.reload();
+            location.reload();
+            
     } else if (nameOfPet.getHunger >= 60){
         console.log(`${nameOfPet.getName} has had enogh`);
         alert(`${nameOfPet.getName} is stuffed and dosnt want anymore food`)
@@ -68,7 +76,7 @@ petDrink.addEventListener(`click`, () =>{
     console.log(nameOfPet.getHunger);
     if (nameOfPet.getPlay < 1 || nameOfPet.getHunger < 1){
             alert(`${nameOfPet.getName} your pet has died`);
-            window.location.reload();
+           location.reload();
     } else if (nameOfPet.getThirst >= 60){
         console.log(`${nameOfPet.getName} has had enogh`);
         alert(`${nameOfPet.getName} is no longer thirsty and dosnt want anymore water`)
