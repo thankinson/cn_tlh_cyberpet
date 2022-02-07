@@ -22,9 +22,9 @@ body{
     background-color: rgb(31, 31, 31);
     overflow: hidden;
 }
-div{
+/* div{
     border: rgb(255, 0, 0) solid 1px;
-}
+} */
 .space{
     height: 2vh;
     

@@ -4,6 +4,10 @@ let petDrink = document.getElementById(`petDrink`);
 let petCreate = document.getElementById(`createPet`);
 let petImg = document.getElementById(`thePetImg`);
 
+let levelPlay = document.getElementById(`levelPlay`);
+let levelHunger = document.getElementById(`levelHunger`);
+let levelThirst = document.getElementById(`levelThirst`);
+
 let nameOfPet = document.getElementById(`petName`).value;
 let typeOfPet = document.getElementById(`petType`).value;
 // creates pet
@@ -14,27 +18,33 @@ petCreate.addEventListener(`click`, () =>{
         nameOfPet = new Cat(nameOfPet);
         petImg.src = "/images/crazy_cat.gif";
         petCreate.style.visibility = 'hidden';
+        stats();
         console.log(nameOfPet);
     }   else if (typeOfPet == "dog") {
         nameOfPet = new Dog(nameOfPet);
         console.log(nameOfPet);
         petImg.src = "/images/strangedog.gif";
         petCreate.style.visibility = 'hidden';
-    } else {
+        stats();
+    } else if (typeOfPet == "fish"){
         nameOfPet = new Fish(nameOfPet);
         console.log(nameOfPet);
         petImg.src = "/images/fish.gif";
         petCreate.style.visibility = 'hidden';
-    };
+        stats();
+    } else {
+        alert(`Please enter a pet name!`);
+    }
     
 });
+
+
 
 
 // play with pet
 
 petPlay.addEventListener(`click`, () =>{
-
-    
+ 
     console.log(nameOfPet.getHunger);
     if (nameOfPet.getHunger < 1 || nameOfPet.getThirst < 1){
             alert(`${nameOfPet.getName} your pet has died`);
@@ -46,6 +56,7 @@ petPlay.addEventListener(`click`, () =>{
         console.log(`${nameOfPet.getName}`);
         console.log(nameOfPet);
         nameOfPet.playPet();
+        stats();
     }
     
 
@@ -55,16 +66,17 @@ petFeed.addEventListener(`click`, () =>{
 
     // nameOfPet.petHunger();
     console.log(nameOfPet.getHunger);
-    if (nameOfPet.getPlay < 1 || nameOfPet.getThirst < 1){
+    if (nameOfPet.getPlay <= 0 || nameOfPet.getThirst <= 0){
             alert(`${nameOfPet.getName} your pet has died`);
             location.reload();
             
     } else if (nameOfPet.getHunger >= 60){
         console.log(`${nameOfPet.getName} has had enogh`);
-        alert(`${nameOfPet.getName} is stuffed and dosnt want anymore food`)
+        alert(`${nameOfPet.getName} is stuffed and dosnt want anymore food`);
     } else {
-        console.log(`${nameOfPet.getName}`)
+        console.log(`${nameOfPet.getName}`);
         nameOfPet.petHunger();
+        stats();
     }
     
 
@@ -79,14 +91,21 @@ petDrink.addEventListener(`click`, () =>{
            location.reload();
     } else if (nameOfPet.getThirst >= 60){
         console.log(`${nameOfPet.getName} has had enogh`);
-        alert(`${nameOfPet.getName} is no longer thirsty and dosnt want anymore water`)
+        alert(`${nameOfPet.getName} is no longer thirsty and dosnt want anymore water`);
     } else {
-        console.log(`${nameOfPet.getName}`)
+        console.log(`${nameOfPet.getName}`);
         nameOfPet.petThirst();
+        stats();
     }
     
 
 });
+
+let stats = () =>{
+    levelPlay.innerHTML = nameOfPet.getPlay
+    levelHunger.innerHTML = nameOfPet.getHunger
+    levelThirst.innerHTML = nameOfPet.getThirst
+};
 
 
 // ########################################################################################################
@@ -153,6 +172,26 @@ class cyberPet{
         };
     };
 
+
+
+// #################################\\
+// #################################\\
+// #################################\\
+
+// #################################\\
+//        the chopping block        \\
+// #################################\\
+
+// const WhatPet = (){
+//     if (typeOfPet = "cat"){
+//         nameOfPet = new Cat;
+//     }   else if (typeOfPet = "dog") {
+//         nameOfPet = new Dog;
+//     } else {
+//         nameOfPet = new Fish;
+//     }
+// }
+
     // class Alien extends cyberPet{
     //     constructor(petName){
     //         super(petName);
@@ -211,24 +250,6 @@ class cyberPet{
 
 
 // thePet()
-
-// #################################\\
-// #################################\\
-// #################################\\
-
-// #################################\\
-//        the chopping block        \\
-// #################################\\
-
-// const WhatPet = (){
-//     if (typeOfPet = "cat"){
-//         nameOfPet = new Cat;
-//     }   else if (typeOfPet = "dog") {
-//         nameOfPet = new Dog;
-//     } else {
-//         nameOfPet = new Fish;
-//     }
-// }
 
 // #################################\\
 // #################################\\
