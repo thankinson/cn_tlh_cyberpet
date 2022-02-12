@@ -41,9 +41,6 @@ petCreate.addEventListener(`click`, () =>{
     
 });
 
-
-
-
 // play with pet
 
 petPlay.addEventListener(`click`, () =>{
